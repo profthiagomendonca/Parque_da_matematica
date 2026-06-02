@@ -4,7 +4,7 @@ var bg_music: AudioStreamPlayer
 
 func _ready() -> void:
 	if ResourceLoader.exists("res://Tela inicial.png"):
-		$Background.texture = preload("res://Tela inicial.png")
+		$Background.texture = load("res://Tela inicial.png")
 
 	# Estilização do botão via código para garantir visual rico
 	var style_normal = StyleBoxFlat.new()
@@ -39,7 +39,7 @@ func _ready() -> void:
 	
 	bg_music = AudioStreamPlayer.new()
 	if ResourceLoader.exists("res://Som abertura.mp3"):
-		bg_music.stream = preload("res://Som abertura.mp3")
+		bg_music.stream = load("res://Som abertura.mp3")
 		bg_music.volume_db = -15.0
 		add_child(bg_music)
 		bg_music.play()

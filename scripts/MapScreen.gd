@@ -4,7 +4,7 @@ var bg_music: AudioStreamPlayer
 
 func _ready() -> void:
 	if ResourceLoader.exists("res://Mapa do jogo.png"):
-		$Background.texture = preload("res://Mapa do jogo.png")
+		$Background.texture = load("res://Mapa do jogo.png")
 		
 	# Estilo interativo fofinho
 	var style_normal = StyleBoxFlat.new()
@@ -50,7 +50,7 @@ func _ready() -> void:
 
 	bg_music = AudioStreamPlayer.new()
 	if ResourceLoader.exists("res://Som mapa.mp3"):
-		bg_music.stream = preload("res://Som mapa.mp3")
+		bg_music.stream = load("res://Som mapa.mp3")
 		bg_music.volume_db = -18.0
 		add_child(bg_music)
 		bg_music.play()
