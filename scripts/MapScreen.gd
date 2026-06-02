@@ -30,10 +30,10 @@ func _ready() -> void:
 		var pin = $PinsContainer.get_node_or_null(pin_name)
 		if pin:
 			# Desconectamos tudo para garantir uma conexão limpa
-			for sig in pin.pressed.get_connections():
-				pin.pressed.disconnect(sig.callable)
-			
-			pin.pressed.connect(_on_pin_pressed.bind(i))
+			var target_callable = _on_pin_pressed.bind(i)
+			if pin.pressed.is_connected(target_callable):
+				pin.pressed.disconnect(target_callable)
+			pin.pressed.connect(target_callable)
 			print("Pin conectado: ", pin_name, " para ID ", i)
 
 	# Animação suave global dos pins
