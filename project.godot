@@ -19,6 +19,10 @@ run/main_scene="res://scenes/TitleScreen.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+OrientationManager="*res://scripts/OrientationManager.gd"
+
 [display]
 
 window/size/viewport_width=1280
